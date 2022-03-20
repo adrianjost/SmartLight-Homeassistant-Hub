@@ -5,8 +5,7 @@
 	"author": "Adrian Jost <https://adrianjost.dev>",
 	"main": "index.js",
 	"scripts": {
-		"start": "node ./index.js",
-		"update": "git pull && npm ci"
+		"start": "node ./index.js"
 	},
 	"dependencies": {
 		"@sentry/node": "^6.18.2",
