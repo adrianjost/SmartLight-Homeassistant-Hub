@@ -1,10 +1,11 @@
 #!/usr/bin/with-contenv bashio
 set +u
 
-export SL_USER_ID=$(bashio::config 'user_id')
+export SL_EMAIL=$(bashio::config 'email')
+export SL_PASSWORD=$(bashio::config 'password')
 
 bashio::log.info "Starting SmartLight hub service."
-bashio::log.info "User: ${SL_USER_ID}."
+bashio::log.info "User: ${SL_EMAIL}."
 
 # npm run update
 npm run start

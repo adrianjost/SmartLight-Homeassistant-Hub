@@ -1,26 +1,28 @@
 {
-  "slug": "smartlight_hub",
-  "name": "SmartLight Hub",
   "version": "0.0.2",
-  "url": "https://github.com/adrianjost/SmartLight-Homeassistant-Hub",
-  "stage": "stable",
-  "description": "Hub to sync cloud state with local SmartLight devices.",
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-  "startup": "services",
-  "boot": "auto",
-  "ports": {
-    "8000/tcp": 8000,
-    "80/tcp": 80
-  },
-  "ports_description": {
-    "8000/tcp": "Webservice",
-    "80/tcp": "WebSocket connection to local devices"
-  },
-  "map": [],
-  "options": {
-    "user_id": "Your SmartLight user id"
-  },
-  "schema": {
-    "user_id": "str"
-  }
+	"slug": "smartlight_hub",
+	"name": "SmartLight Hub",
+	"url": "https://github.com/adrianjost/SmartLight-Homeassistant-Hub",
+	"stage": "stable",
+	"description": "Hub to sync cloud state with local SmartLight devices.",
+	"arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+	"startup": "services",
+	"boot": "auto",
+	"ports": {
+		"8000/tcp": 8000,
+		"80/tcp": 80
+	},
+	"ports_description": {
+		"8000/tcp": "Webservice",
+		"80/tcp": "WebSocket connection to local devices"
+	},
+	"map": [],
+	"options": {
+		"email": "Your SmartLight account email",
+		"password": ""
+	},
+	"schema": {
+		"email": "email",
+		"password": "password"
+	}
 }

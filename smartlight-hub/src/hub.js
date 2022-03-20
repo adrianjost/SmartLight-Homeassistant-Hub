@@ -1,5 +1,5 @@
 //@ts-check
-const { localStorage, kv } = require("./storage");
+const { kv } = require("./storage");
 const ReconnectingWebSocket = require("reconnecting-websocket");
 const WebSocket = require("ws");
 const { auth, db } = require("./firebase");
@@ -130,17 +130,10 @@ function resetConnections() {
 
 async function init() {
 	try {
-		const savedLogin = localStorage.getItem("credential");
-		if (savedLogin === null) {
-			logger.info("No saved credential found");
-			return;
-		}
-		logger.info("Login with saved credentials");
-		const loginData = JSON.parse(savedLogin);
 		kv.credential = await signInWithEmailAndPassword(
 			auth,
-			loginData.email,
-			loginData.password
+			process.env.SL_EMAIL,
+			process.env.SL_PASSWORD
 		);
 
 		logger.info(kv.credential.user.uid);

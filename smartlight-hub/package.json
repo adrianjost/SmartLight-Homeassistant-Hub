@@ -13,7 +13,6 @@
     "@sentry/tracing": "^6.18.2",
     "body-parser": "^1.19.2",
     "firebase": "^9.6.9",
-    "node-localstorage": "^2.2.1",
     "polka": "^0.5.2",
     "reconnecting-websocket": "^4.4.0",
     "throttle-debounce": "^3.0.1",
