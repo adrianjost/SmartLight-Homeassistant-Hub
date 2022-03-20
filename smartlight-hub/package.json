@@ -1,7 +1,7 @@
 {
-	"name": "smartlight_bridge",
+	"name": "smartlight_hub",
 	"version": "0.0.3",
-	"description": "Ring Hub",
+	"description": "SmartLight Hub",
 	"author": "Adrian Jost <https://adrianjost.dev>",
 	"main": "index.js",
 	"scripts": {
