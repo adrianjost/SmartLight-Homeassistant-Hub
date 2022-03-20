@@ -1,7 +1,7 @@
 {
 	"slug": "smartlight_hub",
 	"name": "SmartLight Hub",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"url": "https://github.com/adrianjost/SmartLight-Homeassistant-Hub",
 	"stage": "stable",
 	"description": "Hub to sync cloud state with local SmartLight devices.",
