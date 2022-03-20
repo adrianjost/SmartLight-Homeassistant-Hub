@@ -18,11 +18,13 @@
 	"options": {
 		"email": "Your SmartLight account email",
 		"password": "",
-		"local_logging": false
+		"local_logging": false,
+		"error_reporting": true
 	},
 	"schema": {
 		"email": "email",
 		"password": "password",
-		"local_logging": "bool"
+		"local_logging": "bool",
+		"error_reporting": "bool"
 	}
 }

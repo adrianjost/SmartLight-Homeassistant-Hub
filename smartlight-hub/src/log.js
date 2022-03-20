@@ -2,11 +2,14 @@
 const Sentry = require("@sentry/node");
 
 const loggingEnabled = process.env.SL_LOCAL_LOGGING_ENABLED === "true";
+const reportingEnabled = process.env.SL_ERROR_REPORTING_ENABLED === "true";
 
-Sentry.init({
-	dsn: "https://1fae0f6448734c33b31f06523a55e614@o304407.ingest.sentry.io/1868577",
-	tracesSampleRate: process.env.NODE_ENV === "production" ? 1.0 : 0.0,
-});
+if (reportingEnabled) {
+	Sentry.init({
+		dsn: "https://1fae0f6448734c33b31f06523a55e614@o304407.ingest.sentry.io/1868577",
+		tracesSampleRate: process.env.NODE_ENV === "production" ? 1.0 : 0.0,
+	});
+}
 
 function log() {
 	error("Method .log does not exist on object, please use .info instead.");
@@ -22,14 +25,18 @@ function warn(...attrs) {
 	if (loggingEnabled) {
 		console.warn(`[${new Date().toISOString()}]`, ...attrs);
 	}
-	Sentry.captureMessage(attrs.join(" - "), Sentry.Severity.Warning);
+	if (reportingEnabled) {
+		Sentry.captureMessage(attrs.join(" - "), Sentry.Severity.Warning);
+	}
 }
 
 function error(...attrs) {
 	if (loggingEnabled) {
 		console.error(`[${new Date().toISOString()}]`, ...attrs);
 	}
-	Sentry.captureMessage(attrs.join(" - "), Sentry.Severity.Error);
+	if (reportingEnabled) {
+		Sentry.captureMessage(attrs.join(" - "), Sentry.Severity.Error);
+	}
 }
 
 module.exports = {
