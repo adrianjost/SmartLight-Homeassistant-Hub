@@ -1,0 +1,27 @@
+{
+  "name": "smartlight_bridge",
+  "version": "0.0.1",
+  "description": "Ring Hub",
+  "author": "Adrian Jost <https://adrianjost.dev>",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node ./index.js",
+    "update": "git pull && npm ci"
+  },
+  "dependencies": {
+    "@sentry/node": "^6.18.2",
+    "@sentry/tracing": "^6.18.2",
+    "body-parser": "^1.19.2",
+    "firebase": "^9.6.9",
+    "node-localstorage": "^2.2.1",
+    "polka": "^0.5.2",
+    "reconnecting-websocket": "^4.4.0",
+    "throttle-debounce": "^3.0.1",
+    "ws": "^8.5.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.0"
+  }
+}
