@@ -19,10 +19,12 @@
 	"map": [],
 	"options": {
 		"email": "Your SmartLight account email",
-		"password": ""
+		"password": "",
+		"local_logging": false
 	},
 	"schema": {
 		"email": "email",
-		"password": "password"
+		"password": "password",
+		"local_logging": "bool"
 	}
 }
