@@ -9,11 +9,9 @@
 	"startup": "services",
 	"boot": "auto",
 	"ports": {
-		"8000/tcp": 8000,
 		"80/tcp": 80
 	},
 	"ports_description": {
-		"8000/tcp": "Webservice",
 		"80/tcp": "WebSocket connection to local devices"
 	},
 	"map": [],

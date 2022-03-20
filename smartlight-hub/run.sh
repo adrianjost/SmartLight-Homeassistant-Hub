@@ -1,6 +1,7 @@
 #!/usr/bin/with-contenv bashio
 set +u
 
+export NODE_ENV=production
 export SL_EMAIL=$(bashio::config 'email')
 export SL_PASSWORD=$(bashio::config 'password')
 export SL_LOCAL_LOGGING_ENABLED=$(bashio::config 'local_logging')

@@ -5,7 +5,7 @@
 	"author": "Adrian Jost <https://adrianjost.dev>",
 	"main": "index.js",
 	"scripts": {
-		"start": "cross-env NODE_ENV=production node ./index.js",
+		"start": "node ./index.js",
 		"update": "git pull && npm ci"
 	},
 	"dependencies": {
@@ -18,7 +18,6 @@
 		"ws": "^8.5.0"
 	},
 	"devDependencies": {
-		"cross-env": "^7.0.3",
 		"nodemon": "^2.0.15",
 		"prettier": "^2.6.0"
 	}
