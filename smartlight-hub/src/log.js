@@ -14,20 +14,20 @@ function log() {
 
 function info(...attrs) {
 	if (loggingEnabled) {
-		console.log(...attrs);
+		console.log(`[${new Date().toISOString()}]`, ...attrs);
 	}
 }
 
 function warn(...attrs) {
 	if (loggingEnabled) {
-		console.warn(...attrs);
+		console.warn(`[${new Date().toISOString()}]`, ...attrs);
 	}
 	Sentry.captureMessage(attrs.join(" - "), Sentry.Severity.Warning);
 }
 
 function error(...attrs) {
 	if (loggingEnabled) {
-		console.error(...attrs);
+		console.error(`[${new Date().toISOString()}]`, ...attrs);
 	}
 	Sentry.captureMessage(attrs.join(" - "), Sentry.Severity.Error);
 }
