@@ -12,7 +12,8 @@ RUN apk add --no-cache \
 COPY package.json /
 COPY package-lock.json /
 COPY index.js /
-COPY src /
+ADD src /src
+
 RUN cd / && npm ci --unsafe-perm
 
 COPY run.sh /
